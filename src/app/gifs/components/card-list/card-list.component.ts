@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Gif } from '../../interfaces/gifs.intefaces';
 
 @Component({
   selector: "gifs-card-list",
   standalone: false,
-  templateUrl: './card-list.component.html',
-  styleUrl: ''
+  templateUrl: './card-list.component.html'
 })
 export class CardListComponent{
+
+  @Input()
+  public gifs: Gif = {};
 
 }
