@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { Gif } from "../../interfaces/gifs.intefaces";
 
 @Component({
@@ -7,9 +7,15 @@ import { Gif } from "../../interfaces/gifs.intefaces";
   templateUrl: './card.component.html'
 })
 
-export class CardComponent {
+export class CardComponent implements OnInit{
+
+  ngOnInit(): void {
+    if(!this.gif){
+      throw new Error("Metodo no implementado.");
+    }
+  }
 
   @Input()
-  public gif: Gif = {};
+  public gif!: Gif;
 
 }

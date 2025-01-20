@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { SearchResponse, Images, Gif } from '../interfaces/gifs.intefaces';
+import { SearchResponse, Gif } from '../interfaces/gifs.intefaces';
 
-const GIPHY_API_KEY = 'SpLpQVTGXAYzFLiYAmV0UronAcb6kM02';
+const GIPHY_API_KEY = 'v0kNjVqj1yE3ta91hN86k8eIkdRrPJaE';
 
 @Injectable({
   providedIn: 'root'
@@ -57,7 +57,5 @@ export class GifsService {
     this._tagsHistory = JSON.parse(localStorage.getItem('history')!);
     if(this._tagsHistory.length === 0) return
     this.searchTag(this._tagsHistory[0]);
-
-
   }
 }
